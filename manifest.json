@@ -1,0 +1,6 @@
+{
+  "short_name": "Age Calculator App",
+  "name": "Age Calculator App",
+   "start_url": ".",
+  "display": "standalone"
+}
