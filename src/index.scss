@@ -1,0 +1,40 @@
+@use './assets/colors.scss';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body,
+input,
+input::placeholder {
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background: colors.$light-grey;
+	font-size: 1.2rem;
+}
+
+input,
+input::placeholder {
+	font-size: 2.2rem;
+}
+
+@media (min-width: 992px) {
+	body {
+		font-size: 1.8rem;
+	}
+
+	input,
+	input::placeholder {
+		font-size: 3.2rem;
+	}
+}

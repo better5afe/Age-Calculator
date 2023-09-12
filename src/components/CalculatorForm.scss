@@ -1,0 +1,67 @@
+@use '../assets/colors.scss';
+
+.form {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 4em;
+	border-bottom: 1px solid colors.$light-grey;
+
+	&__group {
+		flex-basis: 30%;
+	}
+
+	&__label {
+		color: colors.$smokey-grey;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+
+	&__input {
+		width: 100%;
+		padding: 0.2em 0.4em;
+		margin-top: 0.2em;
+		border: 1px solid colors.$light-grey;
+		border-radius: 1rem;
+		outline: none;
+
+		&:focus {
+			border-color: colors.$purple;
+		}
+
+		&--error {
+			border-color: colors.$light-red;
+		}
+	}
+
+	&__error {
+		margin-top: 0.2em;
+		font-size: 1rem;
+		color: colors.$light-red;
+		opacity: 0;
+
+		&--visible {
+			opacity: 1;
+		}
+	}
+
+	&__btn {
+		position: absolute;
+		bottom: -35px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 70px;
+		height: 70px;
+		background: colors.$purple;
+		border: none;
+		border-radius: 50%;
+		outline: none;
+		cursor: pointer;
+		transition: background-color 0.3s;
+
+		&:hover {
+			background: colors.$off-black;
+		}
+	}
+}

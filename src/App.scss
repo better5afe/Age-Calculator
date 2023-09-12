@@ -1,0 +1,12 @@
+@use './assets/colors.scss';
+
+main {
+	width: 100vw;
+	min-height: 100vh;
+	padding: 2em 0.5em;
+}
+
+.calculator {
+	padding: 3em 1.5em;
+	background: colors.$white;
+}

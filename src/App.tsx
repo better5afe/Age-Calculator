@@ -1,5 +1,17 @@
+import CalculatorForm from './components/CalculatorForm';
+import CalculatorResult from './components/CalculatorResult';
+
+import './App.scss';
+
 const App = () => {
-	return <h1>App</h1>;
+	return (
+		<main className='main'>
+			<div className='calculator'>
+				<CalculatorForm />
+				<CalculatorResult />
+			</div>
+		</main>
+	);
 };
 
 export default App;
