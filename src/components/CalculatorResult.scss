@@ -4,11 +4,13 @@
 	margin-top: 3.5em;
 
 	&-output {
+		display: flex;
 		font-size: 4.2rem;
 		font-weight: 800;
 		font-style: italic;
 
 		&--colored {
+			margin-right: .2em;
 			color: colors.$purple;
 		}
 	}
