@@ -8,9 +8,19 @@
 		font-size: 4.2rem;
 		font-weight: 800;
 		font-style: italic;
+		opacity: 0;
+		animation: fade-in 1s ease-in-out forwards;
+
+		&:nth-of-type(2) {
+			animation-delay: 1s;
+		}
+
+		&:nth-of-type(3) {
+			animation-delay: 2s;
+		}
 
 		&--colored {
-			margin-right: .2em;
+			margin-right: 0.2em;
 			color: colors.$purple;
 		}
 	}
@@ -31,5 +41,15 @@
 		&-output {
 			font-size: 7rem;
 		}
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
 	}
 }
