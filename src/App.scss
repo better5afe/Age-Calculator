@@ -1,12 +1,28 @@
 @use './assets/colors.scss';
 
-main {
+.main {
 	width: 100vw;
 	min-height: 100vh;
-	padding: 2em 0.5em;
+	padding: 2em 1em;
 }
 
 .calculator {
 	padding: 3em 1.5em;
 	background: colors.$white;
+	border-radius: 1.5rem;
+	border-bottom-right-radius: 25%;
+	box-shadow: 3px 7px 20px -10px colors.$smokey-grey;
+}
+
+@media (min-width: 768px) {
+	.main {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.calculator {
+		width: 768px;
+		padding: 3em 3.5em;
+	}
 }
