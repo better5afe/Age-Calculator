@@ -1,1 +1,15 @@
 @use '../assets/colors.scss';
+
+.calculator__result {
+    margin-top: 3.5em;
+
+	&-output {
+		font-size: 4.8rem;
+		font-weight: 800;
+		font-style: italic;
+
+		&--colored {
+			color: colors.$purple;
+		}
+	}
+}
