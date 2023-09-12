@@ -4,47 +4,55 @@ import AnimatedNumbers from 'react-animated-numbers';
 const CalculatorResult = () => {
 	return (
 		<section className='calculator__result'>
-			<p className='calculator__result-output'>
-				<span className='calculator__result-output--colored'>
+			<div className='calculator__result-output'>
+				<div className='calculator__result-output--digit'>
 					<AnimatedNumbers
 						animateToNumber={38}
 						configs={[
-							{ mass: 1, tension: 140, friction: 126 },
-							{ mass: 1, tension: 130, friction: 114 },
-							{ mass: 1, tension: 150, friction: 112 },
-							{ mass: 1, tension: 130, friction: 120 },
+							{ mass: 1, tension: 220, friction: 100 },
+							{ mass: 1, tension: 180, friction: 130 },
+							{ mass: 1, tension: 280, friction: 90 },
+							{ mass: 1, tension: 180, friction: 135 },
+							{ mass: 1, tension: 260, friction: 100 },
+							{ mass: 1, tension: 210, friction: 180 },
 						]}
 					/>
-				</span>{' '}
-				years
-			</p>
-			<p className='calculator__result-output'>
-				<span className='calculator__result-output--colored'>
+				</div>
+				<p className='calculator__result-output--text'>years</p>
+			</div>
+			<div className='calculator__result-output'>
+				<div className='calculator__result-output--digit'>
 					<AnimatedNumbers
 						animateToNumber={3}
 						configs={[
-							{ mass: 1, tension: 140, friction: 126 },
-							{ mass: 1, tension: 130, friction: 114 },
-							{ mass: 1, tension: 150, friction: 112 },
-							{ mass: 1, tension: 130, friction: 120 },
+							{ mass: 1, tension: 220, friction: 100 },
+							{ mass: 1, tension: 180, friction: 130 },
+							{ mass: 1, tension: 280, friction: 90 },
+							{ mass: 1, tension: 180, friction: 135 },
+							{ mass: 1, tension: 260, friction: 100 },
+							{ mass: 1, tension: 210, friction: 180 },
 						]}
 					/>
-				</span>{' '}
-				months
-			</p>
+				</div>
+				<p className='calculator__result-output--text calculator__result-output--text--months'>
+					months
+				</p>
+			</div>
 			<p className='calculator__result-output'>
-				<span className='calculator__result-output--colored'>
+				<div className='calculator__result-output--digit'>
 					<AnimatedNumbers
 						animateToNumber={26}
 						configs={[
-							{ mass: 1, tension: 140, friction: 126 },
-							{ mass: 1, tension: 130, friction: 114 },
-							{ mass: 1, tension: 150, friction: 112 },
-							{ mass: 1, tension: 130, friction: 120 },
-                        ]}
+							{ mass: 1, tension: 220, friction: 100 },
+							{ mass: 1, tension: 180, friction: 130 },
+							{ mass: 1, tension: 280, friction: 90 },
+							{ mass: 1, tension: 180, friction: 135 },
+							{ mass: 1, tension: 260, friction: 100 },
+							{ mass: 1, tension: 210, friction: 180 },
+						]}
 					/>
-				</span>{' '}
-				days
+				</div>
+				<p className='calculator__result-output--text calculator__result-output--text--days'>days</p>
 			</p>
 		</section>
 	);

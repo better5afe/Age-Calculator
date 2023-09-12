@@ -8,20 +8,23 @@
 		font-size: 4.2rem;
 		font-weight: 800;
 		font-style: italic;
-		opacity: 0;
-		animation: fade-in 1s ease-in-out forwards;
 
-		&:nth-of-type(2) {
-			animation-delay: 1s;
-		}
-
-		&:nth-of-type(3) {
-			animation-delay: 2s;
-		}
-
-		&--colored {
+		&--digit {
 			margin-right: 0.2em;
 			color: colors.$purple;
+		}
+
+		&--text {
+			opacity: 0;
+			animation: fade-in 1s ease-in-out forwards;
+
+			&--months {
+				animation-delay: 1s;
+			}
+
+			&--days {
+				animation-delay: 2s;
+			}
 		}
 	}
 }
