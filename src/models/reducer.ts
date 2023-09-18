@@ -10,7 +10,6 @@ export const initialState: FormState = {
 	},
 	error: {
 		isError: false,
-		invalidInput: '',
 		message: '',
 	},
 };
@@ -35,46 +34,21 @@ export const ageReducer = (state: FormState, action: ActionObject) => {
 	switch (action.type) {
 		case 'SUBMIT':
 			if (
-				action.payload.day.trim().length === 0 &&
-				action.payload.month.trim().length === 0 &&
+				action.payload.day.trim().length === 0 ||
+				action.payload.month.trim().length === 0 ||
 				action.payload.year.trim().length === 0
 			) {
 				return {
 					...state,
-					error: {
+					error: 
+					{
 						isError: true,
-						invalidInput: 'all',
-						message: 'No value'
+						message: 'Submitted one of more empty inputs'
 					}
-				};
-			} else if (action.payload.day.trim().length === 0) {
-				return {
-					...state,
-					error: {
-						isError: true,
-						invalidInput: 'day',
-						message: 'No value provided'
-					}
-				};
-			} else if (action.payload.month.trim().length === 0) {
-				return {
-					...state,
-					error: {
-						isError: true,
-						invalidInput: 'month',
-						message: 'No value provided'
-					}
-				};
-			} else if (action.payload.year.trim().length === 0) {
-				return {
-					...state,
-					error: {
-						isError: true,
-						invalidInput: 'year',
-						message: 'No value provided'
-					}
-				};
+				}
 			}
+
+			
 
 			console.log('everything works');
 			return state;

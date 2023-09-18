@@ -6,7 +6,6 @@ export const AgeContext = React.createContext<ContextInterface>({
 	submitForm: () => {},
 	error: {
 		isError: false,
-		invalidInput: '',
 		message: '',
 	},
 });

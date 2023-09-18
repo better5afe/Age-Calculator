@@ -32,87 +32,57 @@ const CalculatorForm = () => {
 
 	return (
 		<form className='form' onSubmit={submitFormHandler}>
-			<div className='form__group'>
-				<label htmlFor='day' className='form__label'>
-					Day
-				</label>
-				<input
-					ref={dayRef}
-					id='day'
-					className={
-						(error.isError && error.invalidInput === 'day') ||
-						error.invalidInput === 'all'
-							? 'form__input form__input--error'
-							: 'form__input'
-					}
-					type='number'
-					placeholder='DD'
-				/>
-				<p
-					className={
-						(error.isError && error.invalidInput === 'day') ||
-						error.invalidInput === 'all'
-							? 'form__error form__error--visible'
-							: 'form__error'
-					}
-				>
-					{error.message}
-				</p>
+			<div className='form__container'>
+				<div className='form__group'>
+					<label htmlFor='day' className='form__label'>
+						Day
+					</label>
+					<input
+						ref={dayRef}
+						id='day'
+						className={
+							error.isError ? 'form__input form__input--error' : 'form__input'
+						}
+						type='number'
+						placeholder='DD'
+					/>
+				</div>
+				<div className='form__group'>
+					<label htmlFor='month' className='form__label'>
+						Month
+					</label>
+					<input
+						ref={monthRef}
+						id='month'
+						className={
+							error.isError ? 'form__input form__input--error' : 'form__input'
+						}
+						type='number'
+						placeholder='MM'
+					/>
+				</div>
+				<div className='form__group'>
+					<label htmlFor='year' className='form__label'>
+						Year
+					</label>
+					<input
+						ref={yearRef}
+						id='year'
+						className={
+							error.isError ? 'form__input form__input--error' : 'form__input'
+						}
+						type='number'
+						placeholder='YYYY'
+					/>
+				</div>
 			</div>
-			<div className='form__group'>
-				<label htmlFor='month' className='form__label'>
-					Month
-				</label>
-				<input
-					ref={monthRef}
-					id='month'
-					className={
-						(error.isError && error.invalidInput === 'month') ||
-						error.invalidInput === 'all'
-							? 'form__input form__input--error'
-							: 'form__input'
-					}
-					type='number'
-					placeholder='MM'
-				/>
-				<p
-					className={
-						(error.isError && error.invalidInput === 'month') ||
-						error.invalidInput === 'all'
-							? 'form__error form__error--visible'
-							: 'form__error'
-					}
-				>
-					{error.message}
-				</p>
-			</div>
-			<div className='form__group'>
-				<label htmlFor='year' className='form__label'>
-					Year
-				</label>
-				<input
-					ref={yearRef}
-					id='year'
-					className={
-						(error.isError && error.invalidInput === 'year') ||
-						error.invalidInput === 'all'
-							? 'form__input form__input--error'
-							: 'form__input'
-					}
-					type='number'
-					placeholder='YYYY'
-				/>
-				<p
-					className={
-						(error.isError && error.invalidInput === 'year') ||
-						error.invalidInput === 'all'
-							? 'form__error form__error--visible'
-							: 'form__error'
-					}
-				>
-					{error.message}
-				</p>
-			</div>
+			<p
+				className={
+					error.isError ? 'form__error form__error--visible' : 'form__error'
+				}
+			>
+				{error.isError ? error.message : '\u00A0'}
+			</p>
 			<button type='submit' className='form__btn'>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'

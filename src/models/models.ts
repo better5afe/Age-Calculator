@@ -10,7 +10,6 @@ export interface DateOfBirth {
 
 interface Error {
 	isError: boolean;
-	invalidInput: string;
 	message: string;
 }
 
