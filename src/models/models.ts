@@ -8,15 +8,15 @@ export interface DateOfBirth {
 	year: string;
 }
 
-export interface ContextInterface {
-	age: string;
-	submitForm: (value: DateOfBirth) => void;
+interface Error {
 	isError: boolean;
+	invalidInput: string;
+	message: string;
 }
 
 export interface FormState {
 	formInput: DateOfBirth;
-	isError: boolean;
+	error: Error;
 }
 
 export interface ActionObject {
@@ -24,4 +24,8 @@ export interface ActionObject {
 	payload?: any;
 }
 
-
+export interface ContextInterface {
+	age: string;
+	submitForm: (value: DateOfBirth) => void;
+	error: Error;
+}

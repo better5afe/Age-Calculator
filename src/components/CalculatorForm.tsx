@@ -6,6 +6,8 @@ import './CalculatorForm.scss';
 const CalculatorForm = () => {
 	const ageCtx = useContext(AgeContext);
 
+	const error = ageCtx.error;
+
 	const dayRef = useRef<HTMLInputElement | null>(null);
 	const monthRef = useRef<HTMLInputElement | null>(null);
 	const yearRef = useRef<HTMLInputElement | null>(null);
@@ -37,11 +39,25 @@ const CalculatorForm = () => {
 				<input
 					ref={dayRef}
 					id='day'
-					className='form__input'
+					className={
+						(error.isError && error.invalidInput === 'day') ||
+						error.invalidInput === 'all'
+							? 'form__input form__input--error'
+							: 'form__input'
+					}
 					type='number'
 					placeholder='DD'
 				/>
-				<p className='form__error'>error</p>
+				<p
+					className={
+						(error.isError && error.invalidInput === 'day') ||
+						error.invalidInput === 'all'
+							? 'form__error form__error--visible'
+							: 'form__error'
+					}
+				>
+					{error.message}
+				</p>
 			</div>
 			<div className='form__group'>
 				<label htmlFor='month' className='form__label'>
@@ -50,11 +66,25 @@ const CalculatorForm = () => {
 				<input
 					ref={monthRef}
 					id='month'
-					className='form__input'
+					className={
+						(error.isError && error.invalidInput === 'month') ||
+						error.invalidInput === 'all'
+							? 'form__input form__input--error'
+							: 'form__input'
+					}
 					type='number'
 					placeholder='MM'
 				/>
-				<p className='form__error'>error</p>
+				<p
+					className={
+						(error.isError && error.invalidInput === 'month') ||
+						error.invalidInput === 'all'
+							? 'form__error form__error--visible'
+							: 'form__error'
+					}
+				>
+					{error.message}
+				</p>
 			</div>
 			<div className='form__group'>
 				<label htmlFor='year' className='form__label'>
@@ -63,16 +93,27 @@ const CalculatorForm = () => {
 				<input
 					ref={yearRef}
 					id='year'
-					className='form__input'
+					className={
+						(error.isError && error.invalidInput === 'year') ||
+						error.invalidInput === 'all'
+							? 'form__input form__input--error'
+							: 'form__input'
+					}
 					type='number'
 					placeholder='YYYY'
 				/>
-				<p className='form__error'>error</p>
+				<p
+					className={
+						(error.isError && error.invalidInput === 'year') ||
+						error.invalidInput === 'all'
+							? 'form__error form__error--visible'
+							: 'form__error'
+					}
+				>
+					{error.message}
+				</p>
 			</div>
-			<button
-				type='submit'
-				className='form__btn'
-			>
+			<button type='submit' className='form__btn'>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
 					width='40'
