@@ -12,6 +12,11 @@ export const initialState: FormState = {
 
 const checkDateValidity = (day: string, month: string, year: string) => {
 	const date = new Date(`${year}-${month}-${day}`);
+	const currentDate = new Date();
+
+	if (date > currentDate) {
+		return false;
+	}
 
 	if (isNaN(date.getTime())) {
 		return false;
@@ -73,7 +78,6 @@ export const ageReducer = (state: FormState, action: ActionObject) => {
 			);
 
 			if (
-				
 				action.payload.day < 1 ||
 				action.payload.day > 31 ||
 				action.payload.month < 1 ||
