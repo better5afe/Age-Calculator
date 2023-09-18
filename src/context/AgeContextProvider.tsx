@@ -1,8 +1,8 @@
 import { useReducer } from 'react';
 import { AgeContext } from './age-context';
-import { AgeContextProps, DateOfBirth } from '../models/models';
+import { AgeContextProps, DateOfBirth } from '../utils/models';
 
-import { initialState, ageReducer } from '../models/reducer';
+import { initialState, ageReducer } from '../utils/reducer';
 
 const AgeContextProvider: React.FC<AgeContextProps> = ({ children }) => {
 	const [state, dispatch] = useReducer(ageReducer, initialState);
