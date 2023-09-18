@@ -27,9 +27,9 @@ const CalculatorResult = () => {
 						'--'
 					)}
 				</div>
-				<p className='calculator__result-output--text'>years</p>
+				<p className='calculator__result-output'>years</p>
 			</div>
-			<div className='calculator__result-output'>
+			<div className='calculator__result-output calculator__result-output--months'>
 				<div className='calculator__result-output--digit'>
 					{ageCtx.age ? (
 						<AnimatedNumbers
@@ -47,11 +47,11 @@ const CalculatorResult = () => {
 						'--'
 					)}
 				</div>
-				<p className='calculator__result-output--text calculator__result-output--text--months'>
+				<p className='calculator__result-output'>
 					months
 				</p>
 			</div>
-			<p className='calculator__result-output'>
+			<p className='calculator__result-output calculator__result-output--days'>
 				<div className='calculator__result-output--digit'>
 					{ageCtx.age ? (
 						<AnimatedNumbers
@@ -69,7 +69,7 @@ const CalculatorResult = () => {
 						'--'
 					)}
 				</div>
-				<p className='calculator__result-output--text calculator__result-output--text--days'>
+				<p className='calculator__result-output'>
 					days
 				</p>
 			</p>
