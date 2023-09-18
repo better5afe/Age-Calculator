@@ -11,7 +11,7 @@ const AgeContextProvider: React.FC<AgeContextProps> = ({ children }) => {
 
 	const submitFormHandler = (value: DateOfBirth) => {
 		dispatch({ type: 'SUBMIT', payload: value });
-		console.log(state);
+		console.log(state.age);
 	};
 
 	return (

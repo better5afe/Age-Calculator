@@ -8,13 +8,19 @@ export interface DateOfBirth {
 	year: string;
 }
 
+interface Age {
+	years: number | null;
+	months: number | null;
+	days: number | null;
+}
+
 interface Error {
 	isError: boolean;
 	message: string;
 }
 
 export interface FormState {
-	formInput: DateOfBirth;
+	age: Age;
 	error: Error;
 }
 
