@@ -3,11 +3,7 @@ import { FormState, ActionObject } from './models';
 let currentYear = new Date().getFullYear();
 
 export const initialState: FormState = {
-	age: {
-		years: null,
-		months: null,
-		days: null
-	},
+	age: null,
 	error: {
 		isError: false,
 		message: '',
@@ -17,12 +13,14 @@ export const initialState: FormState = {
 const checkDateValidity = (day: string, month: string, year: string) => {
 	const date = new Date(`${year}-${month}-${day}`);
 
-	const formattedDay = String(date.getDate()).padStart(2, '0');
-	const formattedMonth = String(date.getMonth() + 1).padStart(2, '0');
-	const formattedYear = String(date.getFullYear());
+	if (isNaN(date.getTime())) {
+		return false;
+	}
 
 	return (
-		day === formattedDay && month === formattedMonth && year === formattedYear
+		Number(day) === date.getDate() &&
+		Number(month) === date.getMonth() + 1 &&
+		Number(year) === date.getFullYear()
 	);
 };
 
@@ -75,11 +73,12 @@ export const ageReducer = (state: FormState, action: ActionObject) => {
 			);
 
 			if (
-				+action.payload.day < 1 ||
-				+action.payload.day > 31 ||
-				+action.payload.month < 1 ||
-				+action.payload.month > 12 ||
-				+action.payload.year < 0 ||
+				
+				action.payload.day < 1 ||
+				action.payload.day > 31 ||
+				action.payload.month < 1 ||
+				action.payload.month > 12 ||
+				action.payload.year < 1900 ||
 				!isDateValid
 			) {
 				return {

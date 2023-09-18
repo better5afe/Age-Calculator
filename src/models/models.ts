@@ -8,10 +8,10 @@ export interface DateOfBirth {
 	year: string;
 }
 
-interface Age {
-	years: number | null;
-	months: number | null;
-	days: number | null;
+export interface Age {
+	years: number 
+	months: number;
+	days: number;
 }
 
 interface Error {
@@ -20,7 +20,7 @@ interface Error {
 }
 
 export interface FormState {
-	age: Age;
+	age: Age | null;
 	error: Error;
 }
 
@@ -30,7 +30,7 @@ export interface ActionObject {
 }
 
 export interface ContextInterface {
-	age: string;
+	age: Age | null;
 	submitForm: (value: DateOfBirth) => void;
 	error: Error;
 }
